@@ -5,7 +5,7 @@ require_relative "lib/myboj/version"
 Gem::Specification.new do |spec|
   spec.name = "myboj"
   spec.version = Myboj::VERSION
-  spec.authors = ["wingyou"]
+  spec.authors = ["Lee Seung Gyu"]
   spec.email = ["winwing.you@gmail.com"]
 
   spec.summary = "Convenient automation tool for using Baekjoon online judge."
@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/wwingyou/myboj"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
+  spec.required_rubygems_version = ">= 3.1.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
@@ -38,9 +39,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "aruba"
   spec.add_development_dependency "cucumber"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.2"
-  spec.add_development_dependency "rubocop", "~> 1.21"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
