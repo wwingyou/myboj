@@ -8,12 +8,14 @@ Feature: Manage myboj repository
     Then the output should contain "version"
 
   Scenario: Init repository first time
-    Given current directory is not initialized
+    Given the file named ".myboj" does not exist
     When I run `myboj init`
     Then the output should contain "Successfully initialized"
+    Then the following files should exist:
+      | .myboj |
 
   Scenario: Try to init repository again
-    Given current repository is already initialized
+    Given current repository is initialized
     When I run `myboj init`
     Then the output should contain "Already initialized"
 
