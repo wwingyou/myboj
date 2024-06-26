@@ -3,6 +3,7 @@
 require "thor"
 
 module Myboj
+  # NOTE: impelment each cli command under 'myboj/cli' and use it here. 
   class CLI < Thor
     package_name "myboj"
     map "-v" => :version
