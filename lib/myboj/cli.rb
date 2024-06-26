@@ -26,11 +26,18 @@ module Myboj
       puts "[1000번] A+B"
     end
 
-    desc "status", "현재 문제 정보, 언어, 로그인 상태 등을 출력합니다."
-    method_option :verbose, aliases: "-v"
+    desc "config [KEY] [VALUE]", "config myboj settings."
+    def config(key, value)
+      require_relative "cli/config"
+      options = {}
+      Config.new(options).run(key, value)
+    end
+
+    desc "status", "print current myboj repository status."
     def status
-      puts "status info"
-      puts "extra info" unless options[:verbose].nil?
+      require_relative "cli/status"
+      options = {}
+      Status.new(options).run
     end
   end
 end
