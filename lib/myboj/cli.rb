@@ -39,5 +39,12 @@ module Myboj
       options = {}
       Status.new(options).run
     end
+
+    desc "change [KEY] [VALUE]", "change myboj status."
+    def change(key, value)
+      require_relative "cli/change"
+      options = {}
+      Change.new(options).run(key, value)
+    end
   end
 end
