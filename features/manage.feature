@@ -13,6 +13,11 @@ Feature: Manage myboj repository
     Then the output should contain "Successfully initialized"
     Then the following files should exist:
       | .myboj |
+    Then the file ".myboj" should contain:
+      """
+      language: python
+      problem: -1
+      """
 
   Scenario: Try to init repository again
     Given current repository is initialized

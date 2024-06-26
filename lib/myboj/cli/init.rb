@@ -13,8 +13,9 @@ module Myboj
         puts "Already initialized"
         return
       end
-      File.new(".myboj", "w") do |file|
-        # TODO: write initial file content
+      File.open(".myboj", "w") do |file|
+        file.puts "language: python"
+        file.puts "problem: -1"
       end
       puts "Successfully initialized"
     end
