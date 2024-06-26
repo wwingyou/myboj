@@ -13,6 +13,14 @@ module Myboj
       puts "myboj version #{Myboj::VERSION}"
     end
 
+    desc "init", "initialize myboj repository."
+    def init
+      require_relative "cli/init"
+
+      options = {}
+      Init.new(options).run
+    end
+
     desc "pull [CODE]", "지정한 코드의 문제의 테스트케이스와 정보를 가져옵니다."
     def pull(code)
       puts "[1000번] A+B"

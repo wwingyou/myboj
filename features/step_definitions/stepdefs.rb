@@ -1,3 +1,4 @@
 Given("current repository is initialized") do
-  step 'the file named ".myboj" exists'
+  # TODO: fill initial content
+  step %(a file named ".myboj" with:), "initial content"
 end
