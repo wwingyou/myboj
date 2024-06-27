@@ -9,9 +9,7 @@ module Myboj
     def initialize
       super
 
-      puts "[Debug] Initializing StatusManager..."
       unless File.exist?(".myboj")
-        puts "[Debug] No .myboj file found. Initializing .myboj file..."
         File.open(".myboj", "w") do |file|
           file.puts <<~CONTENT
             language: python

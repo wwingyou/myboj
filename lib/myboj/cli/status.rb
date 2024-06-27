@@ -9,7 +9,8 @@ module Myboj
     end
 
     def run
-      puts "language: python"
+      puts "language: #{Myboj.status["language"]}"
+      puts "problem: #{Myboj.status["problem"]}"
     end
   end
 end

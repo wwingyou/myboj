@@ -61,5 +61,8 @@ Feature: Manage myboj repository
 
   Scenario: Show status 
     Given current repository is initialized
+    When I run `myboj change language ruby`
+    When I run `myboj change problem 1000`
     When I run `myboj status`
-    Then the output should contain "language: python"
+    Then the output should contain "language: ruby"
+    Then the output should contain "problem: 1000"
