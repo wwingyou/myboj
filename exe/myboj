@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
-require 'myboj/cli'
+require "myboj"
+
 Myboj::CLI.start
