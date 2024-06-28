@@ -13,10 +13,26 @@ Feature: Manage myboj repository
     Then the output should contain "Successfully initialized"
     Then the following files should exist:
       | .myboj |
+      | myboj.config.yaml |
     Then the file ".myboj" should contain:
       """
       language: python
       problem: -1
+      """
+    Then the file "myboj.config.yaml" should contain:
+      """
+      ---
+      language:
+        - python:
+            cmd: python {file}
+            ext: py
+        - java:
+            cmd: java {file}
+            ext: java
+        - ruby:
+            cmd: ruby {file}
+            ext: rb
+      default_language: python
       """
 
   Scenario: Try to init repository again
@@ -54,10 +70,14 @@ Feature: Manage myboj repository
     Then the output should contain "Invalid problem code"
     Then the exit status should be 1
 
-  Scenario: Config language
+  Scenario: Config default language
     Given current repository is initialized
-    When I run `myboj config language python`
-    Then the output should contain "change to python"
+    When I run `myboj config default_language java`
+    Then the output should contain "Change default language to java"
+    Then the file "myboj.config.yaml" should contain:
+    """
+    default_language: java
+    """
 
   Scenario: Show status 
     Given current repository is initialized

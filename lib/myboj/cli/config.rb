@@ -9,7 +9,7 @@ module Myboj
     end
 
     def run(key, value)
-      puts "change to python"
+      puts "Change default language to #{value}"
     end
   end
 end
