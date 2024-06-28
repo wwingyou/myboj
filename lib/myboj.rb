@@ -2,6 +2,7 @@
 
 require_relative "myboj/version"
 require_relative "myboj/status_manager"
+require_relative "myboj/config_manager"
 require_relative "myboj/cli"
 
 module Myboj

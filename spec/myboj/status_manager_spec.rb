@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "myboj/status_manager"
-
 RSpec.describe Myboj::StatusManager do
   subject! { Myboj::StatusManager.instance }
 

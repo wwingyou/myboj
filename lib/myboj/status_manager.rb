@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
+require "singleton"
+
 module Myboj
   class StatusManager < Hash
-    def self.instance
-      @instance ||= StatusManager.new
-    end
+    include Singleton
 
     def initialize
       super
