@@ -9,6 +9,7 @@ Feature: Manage myboj repository
 
   Scenario: Init repository first time
     Given the file named ".myboj" does not exist
+    Given the file named "myboj.config.yaml" does not exist
     Given default files are available
     When I run `myboj init`
     Then the output should contain "Successfully initialized"
@@ -16,7 +17,7 @@ Feature: Manage myboj repository
       | .myboj |
       | myboj.config.yaml |
     Then the file ".myboj" should be equal to file "default_.myboj"
-    Then the file "myboj.config.yaml" should be equal to file "templates/default_myboj.config.yaml"
+    Then the file "myboj.config.yaml" should be equal to file "default_myboj.config.yaml"
 
   Scenario: Try to init repository again
     Given current repository is initialized

@@ -13,8 +13,8 @@ module Myboj
         puts "Already initialized"
         return
       end
-      File.copy_stream(File.join(Myboj.root_dir, "templates", "default_.myboj"), ".myboj")
-      File.copy_stream(File.join(Myboj.root_dir, "templates", "default_myboj.config.yaml"), "myboj.config.yaml")
+      Myboj::StatusManager.instance.create_default_file_if_not_exist
+      Myboj::ConfigManager.instance.create_default_file_if_not_exist
       puts "Successfully initialized"
     end
   end
