@@ -9,31 +9,14 @@ Feature: Manage myboj repository
 
   Scenario: Init repository first time
     Given the file named ".myboj" does not exist
+    Given default files are available
     When I run `myboj init`
     Then the output should contain "Successfully initialized"
     Then the following files should exist:
       | .myboj |
       | myboj.config.yaml |
-    Then the file ".myboj" should contain:
-      """
-      language: python
-      problem: -1
-      """
-    Then the file "myboj.config.yaml" should contain:
-      """
-      ---
-      language:
-        - python:
-            cmd: python {file}
-            ext: py
-        - java:
-            cmd: java {file}
-            ext: java
-        - ruby:
-            cmd: ruby {file}
-            ext: rb
-      default_language: python
-      """
+    Then the file ".myboj" should be equal to file "default_.myboj"
+    Then the file "myboj.config.yaml" should be equal to file "templates/default_myboj.config.yaml"
 
   Scenario: Try to init repository again
     Given current repository is initialized

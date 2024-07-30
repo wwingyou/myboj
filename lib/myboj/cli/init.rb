@@ -13,26 +13,8 @@ module Myboj
         puts "Already initialized"
         return
       end
-      File.open(".myboj", "w") do |file|
-        file.puts "language: python"
-        file.puts "problem: -1"
-      end
-      File.open("myboj.config.yaml", "w") do |file|
-        file.puts <<~CONTENT
-          ---
-          language:
-            - python:
-                cmd: python {file}
-                ext: py
-            - java:
-                cmd: java {file}
-                ext: java
-            - ruby:
-                cmd: ruby {file}
-                ext: rb
-          default_language: python
-        CONTENT
-      end
+      File.copy_stream(File.join(Myboj.root_dir, "templates", "default_.myboj"), ".myboj")
+      File.copy_stream(File.join(Myboj.root_dir, "templates", "default_myboj.config.yaml"), "myboj.config.yaml")
       puts "Successfully initialized"
     end
   end

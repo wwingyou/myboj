@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "bundler"
+
 require_relative "myboj/version"
 require_relative "myboj/status_manager"
 require_relative "myboj/config_manager"
@@ -12,9 +14,18 @@ module Myboj
     def status
       StatusManager.instance
     end
+
+    def config
+      ConfigManager.instance
+    end
+
+    def root_dir
+      Bundler.root.to_s
+    end
   end
 end
 
 at_exit do
   Myboj::StatusManager.instance.persist
+  Myboj::ConfigManager.instance.persist
 end

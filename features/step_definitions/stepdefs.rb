@@ -6,3 +6,8 @@ Given("current repository is initialized") do
     problem: -1
   CONTENT
 end
+
+Given("default files are available") do
+  copy("%/default_.myboj", "default_.myboj")
+  copy("%/default_myboj.config.yaml", "default_myboj.config.yaml")
+end

@@ -9,7 +9,10 @@ module Myboj
     end
 
     def run(key, value)
-      puts "Change default language to #{value}"
+      if key == "default_language"
+        Myboj.config.data["default_language"] = value
+        puts "Change default language to #{value}"
+      end
     end
   end
 end
