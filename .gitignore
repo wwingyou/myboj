@@ -11,5 +11,6 @@
 .rspec_status
 
 .myboj
+myboj.config.yaml
 
 **/.DS_Store
