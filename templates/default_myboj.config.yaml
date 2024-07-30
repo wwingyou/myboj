@@ -1,0 +1,12 @@
+---
+language:
+  - python:
+      cmd: python {file}
+      ext: py
+  - java:
+      cmd: java {file}
+      ext: java
+  - ruby:
+      cmd: ruby {file}
+      ext: rb
+default_language: python
