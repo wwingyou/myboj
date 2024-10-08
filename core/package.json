@@ -1,0 +1,23 @@
+{
+  "name": "myboj-core",
+  "version": "1.0.0",
+  "description": "백준 온라인 저지 테스트케이스 실행 및 코드 관리 자동화 도구 핵심 라이브러리",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwingyou/myboj.git"
+  },
+  "keywords": [
+    "boj",
+    "백준"
+  ],
+  "author": "wwingyou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wwingyou/myboj/issues"
+  },
+  "homepage": "https://github.com/wwingyou/myboj#readme"
+}
